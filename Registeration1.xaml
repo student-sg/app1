@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="smartstick1.Registeration1"
+             Title="Registeration1"
+             BackgroundImageSource="Resources/Images/background.jpg">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Go Back" Order="Primary" Priority="1" Clicked="OnBackButtonClicked"/>
+    </ContentPage.ToolbarItems>
+    <Frame WidthRequest="350" HeightRequest="650" BackgroundColor="White" CornerRadius="15" Padding="0">
+
+        <ScrollView>
+            <StackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+                <Label Text="Register" 
+           FontSize="36" 
+           HorizontalOptions="Center" 
+           TextColor="Black" 
+           FontAttributes="Bold" />
+
+                <Entry x:Name="nameEntry"
+            Placeholder="Name"
+            Margin="0,20,0,0"
+            TextColor="Black"
+            PlaceholderColor="Gray"
+            BackgroundColor="#F0F0F0"
+            HeightRequest="50"/>
+
+                <Entry x:Name="emailEntry"
+            Placeholder="Email"
+            Keyboard="Email"
+            Margin="0,20,0,0"
+            TextColor="Black"
+            PlaceholderColor=" DarkGray"
+            BackgroundColor="#F0F0F0"
+            HeightRequest="50"/>
+
+                <Entry x:Name="passwordEntry"
+            Placeholder="Password"
+            IsPassword="True"
+            Margin="0,20,0,0"
+            TextColor="Black"
+            PlaceholderColor="Gray"
+            BackgroundColor="#F0F0F0"
+            HeightRequest="50"/>
+
+                <Entry x:Name="confirmPasswordEntry"
+                Placeholder="Confirm Password"
+                IsPassword="True"
+                Margin="0,20,0,0"
+                TextColor="Black"
+                PlaceholderColor="Gray"
+                BackgroundColor="#F0F0F0"
+                HeightRequest="50"/>
+
+                <Entry x:Name="phoneNumberEntry"
+            Placeholder="Phone Number"
+            Keyboard="Telephone"
+            Margin="0,20,0,0"
+            TextColor="Black"
+            PlaceholderColor="Gray"
+            BackgroundColor="#F0F0F0"
+            HeightRequest="50"/>
+
+                <Entry x:Name="walkingStickIdEntry"
+            Placeholder="Walking Stick ID"
+            Margin="0,20,0,0"
+            TextColor="Black"
+            PlaceholderColor="Gray"
+            BackgroundColor="#F0F0F0"
+            HeightRequest="50"/>
+
+                <Button Text="Register"
+            Margin="0,20,0,0"
+            Clicked="OnRegisterButtonClicked"
+            TextColor="White" 
+            BackgroundColor="#007BFF"
+            CornerRadius="25"
+            HeightRequest="50"/>
+
+                <Label Text="Already have an account? Login"
+            TextColor="Red"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginLinkTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+        </ScrollView>
+    </Frame>
+
+</ContentPage>

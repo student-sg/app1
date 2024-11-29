@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="smartstick1.profilensettings"
+             Title="profilensettings">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu" IconImageSource="menu.png" Order="Primary" Priority="0" Clicked="OnMenuClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- User's Profile Information -->
+            <Frame BackgroundColor="LightGray" CornerRadius="10" Padding="20">
+                <StackLayout Spacing="10">
+                    <!-- Name -->
+                    <Label Text="Name:" FontSize="16" FontAttributes="Bold" />
+                    <Label Text="{Binding UserName}" FontSize="18" TextColor="Black" />
+
+                    <!-- Email -->
+                    <Label Text="Email:" FontSize="16" FontAttributes="Bold" />
+                    <Label Text="{Binding UserEmail}" FontSize="18" TextColor="Black" />
+
+                    <!-- Phone Number -->
+                    <Label Text="Phone Number:" FontSize="16" FontAttributes="Bold" />
+                    <Label Text="{Binding UserPhoneNumber}" FontSize="18" TextColor="Black" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Edit Button -->
+            <Button Text="Edit Profile"
+                    Command="{Binding EditProfileCommand}"
+                    BackgroundColor="RoyalBlue"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="smartstick1.voicecall1"
+             xmlns:viewModel="clr-namespace:smartstick1.ViewModel"
+            x:DataType="viewModel:PhoneDialerViewModel"
+             BackgroundImageSource="background.png"
+             Title="voicecall1">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Go Back" Order="Primary" Priority="1" Clicked="OnBackButtonClicked"/>
+        <ToolbarItem Text="Menu" IconImageSource="menu.png" Order="Primary" Priority="0" Clicked="OnMenuClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="20">
+
+        <Entry HorizontalOptions="CenterAndExpand"
+  Keyboard="Numeric"
+  FontSize="30"
+  Text="9969832668"
+  IsReadOnly="True"
+  IsEnabled="False"
+  />
+
+        <Grid HorizontalOptions="Center"
+      VerticalOptions="Center"
+      Padding="15"
+      BackgroundColor="RoyalBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Image -->
+            <Image Source="caal.png"
+               HeightRequest="24"
+                 WidthRequest="24"
+               VerticalOptions="Center"
+                Margin="0,0,10,0"
+               Grid.Column="0"/>
+
+            <!-- Text -->
+            <Label Text="Start Call"
+           FontSize="20"
+           TextColor="White"
+           VerticalOptions="Center"
+           Grid.Column="1"/>
+
+            <!-- Gesture Recognizer for Click/Tap -->
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CalleNumberCommand}" />
+            </Grid.GestureRecognizers>
+        </Grid>
+
+        <Label Text="Past Calls"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,20,0,10"/>
+
+        <CollectionView ItemsSource="{Binding CallDetails}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding PhoneNumber}" Detail="{Binding CallTime}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

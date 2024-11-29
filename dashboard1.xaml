@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="smartstick1.dashboard1"
+             Title="dashboard"
+             BackgroundImageSource="background.png">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu" IconImageSource="menu.png" Order="Primary" Priority="0" Clicked="OnMenuClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="20">
+
+        <StackLayout Spacing="10">
+            <Frame BackgroundColor="#F0F0F0" CornerRadius="10" Padding="10" Margin="0,10" HeightRequest="80" WidthRequest="300" BorderColor="Black">
+                <Label Text="Status: Online" FontSize="18" HorizontalTextAlignment="Center"
+VerticalTextAlignment="Center" TextColor="Green" />
+            </Frame>
+
+            <Frame BackgroundColor="#F0F0F0"
+                    CornerRadius="10"
+                   Padding="10"
+                   Margin="0,5"
+                   WidthRequest="300"
+                   HeightRequest="300" 
+                HorizontalOptions="Center"
+                 VerticalOptions="Center">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <!-- Label -->
+                    <Label Text="Current Location:"
+               FontSize="18"
+               TextColor="Black"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center">
+
+                    </Label>
+
+                    <!-- Image -->
+                    <Image Source="location.png"
+                         HeightRequest="350" 
+                        WidthRequest="300"
+                       
+                        HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLocationTapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="#F0F0F0" CornerRadius="10" Padding="10" Margin="0,10" HeightRequest="80" WidthRequest="300" BorderColor="Black">
+                <Label Text="Recent Alerts: No new alerts" FontSize="18" HorizontalOptions="Center"  VerticalTextAlignment="Center" TextColor="Black" />
+            </Frame>
+
+            <Frame BackgroundColor="#F0F0F0" CornerRadius="10" Padding="10" Margin="0,10" WidthRequest="300">
+                <StackLayout Spacing="10">
+                    <Label Text="Health Summary" FontSize="22" FontAttributes="Bold" TextColor="Black" />
+
+                    <Label Text="Steps: 5000" FontSize="18" TextColor="Black" />
+
+                    <Label Text="Heart Rate: 72 bpm" FontSize="18" TextColor="Black" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
